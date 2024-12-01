@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montblanc";
+  src: url("./fonts/Montblanc.woff2") format("woff2"),
+    url("./fonts/Montblanc.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Colette";
+  src: url("./fonts/Colette-Regular.woff2") format("woff2"),
+    url("./fonts/Colette-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.mont {
+  font-family: "Montblanc";
+}
+
+.col {
+  font-family: "Colette";
+}
