@@ -5,13 +5,14 @@ import "./globals.css";
 
 const mont = Montserrat({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "600", "700", "800", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Anarc Watch | Layers",
-  description: "Anarc Watch your go-to for all watch for every events by Tech Burner.",
+  description:
+    "Anarc Watch your go-to for all watch for every events by Tech Burner.",
 };
 
 export default function RootLayout({
