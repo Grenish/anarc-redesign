@@ -20,10 +20,30 @@
   font-display: swap;
 }
 
+:root {
+  --primary: #0c1c33;
+  --accent: #2a5ddb;
+  --secondary: #C5C5C5;
+}
+
 .mont {
   font-family: "Montblanc";
 }
 
 .col {
   font-family: "Colette";
+}
+
+.background-1{
+  background-image: url("../public/anarc14.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background-2{
+  background-image: url("../public/anarc69.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
