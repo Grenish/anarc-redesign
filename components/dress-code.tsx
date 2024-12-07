@@ -1,6 +1,7 @@
 export default function DressCode() {
   return (
     <div className="w-full p-20 flex flex-col h-screen justify-between background-2">
+      {/* Left Side */}
       <div>
         <h1 className="text-6xl font-bold capitalize w-1/3 text-gray-200">
           Flaunt Your Style
@@ -10,6 +11,8 @@ export default function DressCode() {
           completes any look.
         </p>
       </div>
+
+      {/* Right Side */}
       <div className="self-end text-right flex flex-col items-end">
         <h1 className="text-6xl font-bold capitalize w-1/2 text-gray-200 ">
           Own the Spotlight
