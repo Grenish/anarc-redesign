@@ -43,7 +43,7 @@ const specs: Spec[] = [
     title: "Health and Wellness",
     description:
       "Offers comprehensive health and wellness features, including heart rate monitoring, SpO2 measurement, sleep tracking, stress management, guided breathing exercises, and integration with the Layers Watch App for a personalized experience.",
-    media: "/anarc44.png",
+    media: "/anarc50.png",
     type: "image",
   },
   {
