@@ -16,6 +16,9 @@ export default function WatchSection() {
               Beauty and geometry come together to create Anarc's unique
               octagonal dial.
             </p>
+            <p className="text-balance text-yellow-700/80 text-base md:text-lg mt-5">
+              Country of Origin: China
+            </p>
           </div>
         </div>
       </div>
