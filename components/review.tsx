@@ -40,6 +40,7 @@ export default function Review() {
   ];
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center">
+      <h2 className="text-3xl font-semibold">What others has to say</h2>
       <AnimatedTestimonials testimonials={testimonials} />
     </div>
   );
