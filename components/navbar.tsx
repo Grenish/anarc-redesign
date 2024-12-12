@@ -16,16 +16,28 @@ const SearchBox: React.FC<SearchBoxProps> = ({ onClose }) => {
       </button>
       <div className="flex item-center gap-2 border-b-2 w-1/3">
         <Search size={20} />
-        <input type="text" placeholder="Search" className="outline-none w-full bg-transparent"/>
+        <input
+          type="text"
+          placeholder="Search"
+          className="outline-none w-full bg-transparent"
+        />
       </div>
     </div>
   );
 };
 
+const sections = [
+  { id: "overview", label: "Overview" },
+  { id: "specs", label: "Specs" },
+  { id: "box", label: "Box" },
+  { id: "review", label: "Review" },
+];
+
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("overview");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -38,10 +50,34 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 0);
+
+      const sectionElements = sections.map((section) =>
+        document.getElementById(section.id)
+      );
+
+      const currentSection = sectionElements.findIndex((el) => {
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom > 100;
+        }
+        return false;
+      });
+
+      if (currentSection !== -1) {
+        setActiveSection(sections[currentSection].id);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="relative">
@@ -105,12 +141,17 @@ export default function Navbar() {
             <span className="sm:inline">Anarc Watch</span>
           </h2>
           <div className="flex items-center justify-end overflow-x-auto scrollbar-hide">
-            <button className="text-xs border-b-2 border-accent p-2.5 whitespace-nowrap">
-              Overview
-            </button>
-            <button className="text-xs p-2.5 whitespace-nowrap">Specs</button>
-            <button className="text-xs p-2.5 whitespace-nowrap">Box</button>
-            <button className="text-xs p-2.5 whitespace-nowrap">Review</button>
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className={`text-xs p-2.5 whitespace-nowrap ${
+                  activeSection === section.id ? "border-b-2 border-accent" : ""
+                }`}
+              >
+                {section.label}
+              </button>
+            ))}
           </div>
         </div>
       </nav>
