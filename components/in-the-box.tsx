@@ -37,7 +37,7 @@ export default function ExpandingImage() {
               src="/anarc65.jpeg"
               alt="Anarc Watch"
               fill
-              sizes="10vw"
+              sizes="100vw"
               priority
               style={{
                 objectFit: "cover",
